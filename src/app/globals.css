@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #3b33c7;
+  --color-brand-dark: #2f28a8;
+  --color-brand-tint: #eeedfb;
+  --color-brand-soft: #c9c6ef;
+  --color-brand-mid: #7a72d8;
+
+  --color-ink: #1a1a2e;
+  --color-body: #6b7280;
+  --color-faint: #9ca3af;
+
+  --color-canvas: #fafafb;
+  --color-line: #e7e7ee;
+  --color-line-soft: #f1f1f5;
+
+  --color-accent: #e8442e;
+  --color-accent-tint: #fde8e4;
+
+  --color-success: #16a34a;
+  --color-success-tint: #dcfce7;
+
+  --color-footer: #1a1a2e;
+  --color-footer-line: #2e2e45;
+  --color-footer-input: #26263b;
+  --color-footer-input-line: #3a3a55;
+  --color-footer-dim: #8b8ba7;
+  --color-footer-faint: #6b6b85;
+
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background: var(--color-canvas);
+    color: var(--color-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #dad8f7;
+  }
+
+  /* Sticky header is 72px tall; keep anchored sections clear of it. */
+  [id] {
+    scroll-margin-top: 84px;
+  }
+}
+
+@keyframes bp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(232 68 46 / 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgb(232 68 46 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(232 68 46 / 0);
+  }
+}
+
+@keyframes bp-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.bp-pulse {
+  animation: bp-pulse 1.8s infinite;
+}
+
+.bp-fade-in {
+  animation: bp-fade-in 0.5s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-pulse,
+  .bp-fade-in {
+    animation: none;
+  }
+}
