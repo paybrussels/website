@@ -13,11 +13,6 @@ export const PARTNER_LINKS = [
 ] as const;
 
 export const STATS = {
-  allTimeDonated: "€12,480",
-  spentByCardholders: "€7,465",
-  activeCards: "32",
-  partnerShops: 42,
-  seedBalance: 5015.4,
   kickstartDonors: 32,
   kickstartRaised: "€5,015",
 } as const;
@@ -44,40 +39,18 @@ export const HOW_IT_WORKS = [
 ] as const;
 
 /** [donated, paid out] in euros, oldest month first. */
-export const MONTHLY_FLOWS: readonly (readonly [number, number])[] = [
-  [820, 540],
-  [910, 610],
-  [1040, 720],
-  [980, 690],
-  [1120, 810],
-  [1260, 900],
-  [1180, 870],
-  [1010, 760],
-  [1340, 980],
-  [1290, 1010],
-  [1420, 1080],
-  [1510, 1130],
-];
-
-export const MONTH_LABELS = [
-  "A",
-  "M",
-  "J",
-  "J",
-  "A",
-  "S",
-  "O",
-  "N",
-  "D",
-  "J",
-  "F",
-  "M",
-] as const;
-
-export const CHART_MAX = 1600;
-
 /** TODO: replace with the real donation link. */
 export const DONATION_URL = "https://TODO.example";
+
+export const GROWFUNDING_URL = "https://growfunding.be/en/projects/brusselspay";
+
+export const WHATSAPP_URL = "https://chat.whatsapp.com/GUvHQRzWpZS3QfpUc1xjxY";
+
+/** La Caisse embeds. Their CSP allows framing from pay.brussels and localhost:3000. */
+export const CASHBOX_EMBED_URL =
+  "https://paybrussels.lacaisse.eu/embed/account/33cd267debadc251ae2164694ff11ce8";
+
+export const MERCHANT_MAP_EMBED_URL = "https://paybrussels.lacaisse.eu/embed/merchants/map";
 
 export const AMOUNT_CHIPS = [
   { value: 5, label: "€5", equivalent: "≈ 2 coffees" },
@@ -89,37 +62,6 @@ export const AMOUNT_CHIPS = [
 
 export const MIN_DONATION = 1;
 export const MAX_DONATION = 10_000;
-
-export type PlaceType = "Café" | "Restaurant" | "Grocery" | "Bakery";
-
-export const PLACES: readonly {
-  name: string;
-  type: PlaceType;
-  hood: string;
-}[] = [
-  { name: "Café Belga", type: "Café", hood: "Ixelles" },
-  { name: "Chez Franz", type: "Restaurant", hood: "Saint-Gilles" },
-  { name: "Färm Flagey", type: "Grocery", hood: "Ixelles" },
-  { name: "Le Pain Quotidien", type: "Bakery", hood: "Sablon" },
-  { name: "Maison Renard", type: "Café", hood: "Marolles" },
-  { name: "Épicerie du Coin", type: "Grocery", hood: "Schaerbeek" },
-];
-
-export const PLACE_FILTERS = [
-  "All",
-  "Café",
-  "Restaurant",
-  "Grocery",
-  "Bakery",
-] as const;
-
-export const MAP_PINS = [
-  { left: "28%", top: "40%" },
-  { left: "52%", top: "30%" },
-  { left: "44%", top: "58%" },
-  { left: "66%", top: "64%" },
-  { left: "36%", top: "22%" },
-] as const;
 
 export const NEXT_MEETUP = {
   when: "Thursday 24 July · 18:30",

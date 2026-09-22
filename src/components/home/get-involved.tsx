@@ -1,6 +1,6 @@
-import { ImageSlot } from "@/components/image-slot";
+import Image from "next/image";
 import { Accent, SectionHeading } from "@/components/ui";
-import { NEXT_MEETUP } from "@/lib/content";
+import { NEXT_MEETUP, WHATSAPP_URL } from "@/lib/content";
 
 const ACTIONS = [
   { label: "Volunteer at events", href: "/contact" },
@@ -35,15 +35,26 @@ export function GetInvolved() {
             </a>
           </div>
 
-          <div className="flex flex-col items-center justify-center rounded-[20px] bg-brand p-7.5 text-center text-white">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-col items-center justify-center rounded-[20px] bg-brand p-7.5 text-center text-white transition-colors hover:bg-brand-dark"
+          >
             <div className="mb-4 text-lg font-bold">Join the WhatsApp group</div>
-            <div className="mb-4 h-[130px] w-[130px] overflow-hidden rounded-[14px] bg-white">
-              <ImageSlot label="QR" />
+            <div className="mb-4 h-[130px] w-[130px] overflow-hidden rounded-[14px] bg-white p-2">
+              <Image
+                src="/whatsapp-qr.svg"
+                alt="QR code for the Pay for Brussels WhatsApp group"
+                width={114}
+                height={114}
+                unoptimized
+              />
             </div>
             <p className="text-[13.5px] text-brand-soft">
-              Scan to hop in, or ask us at the next meetup.
+              Scan or tap to hop in, or ask us at the next meetup.
             </p>
-          </div>
+          </a>
         </div>
 
         <div className="mt-6.5 flex flex-wrap justify-center gap-6 text-[14.5px] font-medium">
