@@ -38,7 +38,6 @@ export const HOW_IT_WORKS = [
   },
 ] as const;
 
-/** [donated, paid out] in euros, oldest month first. */
 /** TODO: replace with the real donation link. */
 export const DONATION_URL = "https://TODO.example";
 
