@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { NAV_LINKS, PARTNER_LINKS } from "@/lib/content";
 import { LanguageSwitcher } from "./language-provider";
-import { NewsletterForm } from "./newsletter-form";
 
 const LEGAL_LINKS = [
   { label: "Privacy", href: "/privacy" },
-  { label: "Ledger", href: "/ledger" },
+  { label: "Ledger", href: "/#transparency" },
   { label: "Statutes", href: "/statutes" },
   { label: "Contact", href: "/contact" },
 ];
@@ -50,13 +49,10 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <div className="mb-3.5 text-[13px] font-bold text-white">
-            Monthly update from the cashbox
-          </div>
-          <NewsletterForm />
-          <div className="flex flex-wrap gap-4 text-[13px]">
+          <div className="mb-3.5 text-[13px] font-bold text-white">More</div>
+          <div className="flex flex-col gap-2.5 text-sm">
             {LEGAL_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="text-footer-dim hover:text-white">
+              <Link key={link.href} href={link.href} className="text-brand-soft hover:text-white">
                 {link.label}
               </Link>
             ))}

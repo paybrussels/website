@@ -1,4 +1,3 @@
-import { CashboxProvider } from "@/components/cashbox-provider";
 import { About } from "@/components/home/about";
 import { Cashbox } from "@/components/home/cashbox";
 import { Donate } from "@/components/home/donate";
@@ -9,7 +8,7 @@ import { Places } from "@/components/home/places";
 
 export default function HomePage() {
   return (
-    <CashboxProvider>
+    <>
       <Hero />
       <HowItWorks />
       <Cashbox />
@@ -17,6 +16,6 @@ export default function HomePage() {
       <Places />
       <GetInvolved />
       <About />
-    </CashboxProvider>
+    </>
   );
 }

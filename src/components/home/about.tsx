@@ -1,6 +1,6 @@
 import { ImageSlot } from "@/components/image-slot";
 import { Accent } from "@/components/ui";
-import { STATS, TEAM } from "@/lib/content";
+import { GROWFUNDING_URL, STATS, TEAM } from "@/lib/content";
 
 export function About() {
   return (
@@ -60,7 +60,12 @@ export function About() {
       <p className="mx-auto max-w-[720px] rounded-2xl border border-line bg-canvas px-6.5 py-5.5 text-center text-[15px] leading-relaxed">
         Kickstarted by <Accent>{STATS.kickstartDonors} donors</Accent> who raised{" "}
         <Accent>{STATS.kickstartRaised}</Accent> through a{" "}
-        <a href="/growfunding" className="font-semibold text-brand underline">
+        <a
+          href={GROWFUNDING_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold text-brand underline"
+        >
           growfunding
         </a>{" "}
         campaign.

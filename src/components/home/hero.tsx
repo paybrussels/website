@@ -1,15 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { useCashbox } from "@/components/cashbox-provider";
 import { ImageSlot } from "@/components/image-slot";
 import { Accent, LiveDot } from "@/components/ui";
-import { STATS } from "@/lib/content";
-import { formatEuro } from "@/lib/format";
 
 export function Hero() {
-  const { balance } = useCashbox();
-
   return (
     <section className="mx-auto grid max-w-[1200px] items-center gap-14 px-6 pt-16 pb-16 lg:grid-cols-[1.05fr_0.95fr]">
       <div>
@@ -42,18 +35,15 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4.5 text-[13.5px] font-medium">
-          <div className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2">
-            <LiveDot />
-            <span className="text-ink">
-              <strong className="font-semibold">€{formatEuro(balance)}</strong> in the
-              account right now
-            </span>
-          </div>
-          <span className="text-faint">
-            {STATS.partnerShops} partner shops · {STATS.activeCards} active cards
+        <Link
+          href="/#transparency"
+          className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2 text-[13.5px] font-medium text-ink transition-colors hover:border-brand"
+        >
+          <LiveDot />
+          <span>
+            <strong className="font-semibold">Public account</strong>, updated live
           </span>
-        </div>
+        </Link>
       </div>
 
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[22px] shadow-[0_12px_40px_rgba(59,51,199,0.10)]">
