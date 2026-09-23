@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, PARTNER_LINKS } from "@/lib/content";
+import { NAV_LINKS, ORGANIZATION, PARTNER_LINKS } from "@/lib/content";
 import { LanguageSwitcher } from "./language-provider";
 
 const LEGAL_LINKS = [
@@ -83,7 +83,7 @@ export function SiteFooter() {
           · pay.brussels
         </div>
         <div className="mt-1.5">
-          Brussels Pay ASBL · Cantersteen 47, 1000 Brussels · VAT BE1017806251
+          {ORGANIZATION.name} · {ORGANIZATION.address} · VAT {ORGANIZATION.vat}
         </div>
         <div className="mt-1.5">© 2026 Pay for Brussels · Built in Brussels</div>
       </div>
