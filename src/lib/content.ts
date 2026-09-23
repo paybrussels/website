@@ -51,6 +51,17 @@ export const CASHBOX_EMBED_URL =
 
 export const MERCHANT_MAP_EMBED_URL = "https://paybrussels.lacaisse.eu/embed/merchants/map";
 
+export const ORGANIZATION = {
+  name: "Brussels Pay ASBL",
+  vat: "BE1017806251",
+  address: "Cantersteen 47, 1000 Brussels",
+} as const;
+
+/** Email for privacy and data requests. Rendered only when set. */
+export const PRIVACY_CONTACT_EMAIL: string | null = null;
+
+export const PRIVACY_LAST_UPDATED = "23 September 2026";
+
 export const AMOUNT_CHIPS = [
   { value: 5, label: "€5", equivalent: "≈ 2 coffees" },
   { value: 10, label: "€10", equivalent: "≈ 1 warm meal" },
